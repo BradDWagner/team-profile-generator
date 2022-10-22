@@ -147,7 +147,7 @@ function addTeamMember(data){
     } else if (data.continue == 'Intern'){
         createIntern();
     } else {
-        console.log(generateHtml(team))
+        generateHtml(team)
     }
 }
 createManager();
