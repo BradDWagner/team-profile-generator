@@ -43,11 +43,7 @@ function createManager(){
         }
     ])
     .then(data => {
-        manager.getName(data);
-        manager.getId(data);
-        manager.getEmail(data);
-        manager.getOfficeNum(data);
-        team.push(manager);
+        team.push(manager.getRole(data));
         addTeamMember(data);
     })
 
@@ -88,11 +84,7 @@ function createIntern(){
         }
     ])
     .then(data => {
-        intern.getName(data);
-        intern.getId(data);
-        intern.getEmail(data);
-        intern.getSchool(data);
-        team.push(intern);
+        team.push(intern.getRole(data));
         addTeamMember(data);
     })
 }
@@ -132,11 +124,8 @@ function createEngineer(){
         }
     ])
     .then(data => {
-        engineer.getName(data);
-        engineer.getId(data);
-        engineer.getEmail(data);
-        engineer.getGitHub(data);
-        team.push(engineer);
+
+        team.push(engineer.getRole(data));
         addTeamMember(data);
     })
 }
