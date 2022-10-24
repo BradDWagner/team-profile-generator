@@ -139,4 +139,10 @@ function addTeamMember(data){
         generateHtml(team)
     }
 }
-createManager();
+
+function init(){
+    console.log("Welcome to the team generator! \n Please build your team-")
+    createManager();
+}
+init();
+

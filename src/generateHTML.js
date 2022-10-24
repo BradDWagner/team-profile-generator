@@ -6,7 +6,8 @@ function managerCard(manager){
     <div class="card col-3 m-2 d-flex justify-content-around" style="width: 18rem;">
                     <div class="card-header  bg-primary">
                         ${manager.name}
-                        Manager
+                        <br>
+                        💼Manager
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">ID: ${manager.id}</li>
@@ -21,7 +22,8 @@ function engineerCard(engineer){
     <div class="card col-3 m-2 d-flex justify-content-around" style="width: 18rem;">
                     <div class="card-header  bg-primary">
                         ${engineer.name}
-                        Engineer
+                        <br>
+                        💻Engineer
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">ID: ${engineer.id}</li>
@@ -36,7 +38,8 @@ function internCard(intern){
     <div class="card col-3 m-2 d-flex justify-content-around" style="width: 18rem;">
                     <div class="card-header  bg-primary">
                         ${intern.name}
-                        Intern
+                        <br>
+                        🎓Intern
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">ID: ${intern.id}</li>
