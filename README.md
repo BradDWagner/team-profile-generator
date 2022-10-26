@@ -26,6 +26,15 @@
 
   ## Usage
 
+  After initializing the app as described above, the app can be launched using 
+
+  ```
+  node index.js
+  ```
+
+  The user will then be prompted to provide information about their team's manager including name, id, email, and office number. They will then be given the option to add an engineer, an intern, or to finish adding members. If the user chooses to add an engineer or intern they will be prompted to provide the individuals name, id, email and either their GitHub or University respectively, and again given the option to continue adding members. If the user chooses to finish adding members then an HTML file will be generated in the 'dist' folder with their team's information. 
+
+  A walkthrough video can be found [here.](https://watch.screencastify.com/v/UZxktDS3xunG58rn0i71)
   
 
   ## License
