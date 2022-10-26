@@ -5,8 +5,10 @@ const inquirer = require('inquirer');
 
 const { generateHtml } = require('./src/generateHTML')
 
+//empty array to hold the objects for each employee
 const team = []
 
+//begin promps by creating a new manager object
 function createManager(){
     const manager = new Manager();
     inquirer
@@ -43,11 +45,15 @@ function createManager(){
         }
     ])
     .then(data => {
+        //use the getRole() method to input collected data into the manager object and add it to the team array
         team.push(manager.getRole(data));
+        //function to determine which employee to create next based on the 'continue' prompt
         addTeamMember(data);
     })
 
 }
+
+//if intern is selected from the 'continue' prompt, retrive data for a new intern object
 function createIntern(){
     const intern = new Intern();
     inquirer
@@ -84,10 +90,14 @@ function createIntern(){
         }
     ])
     .then(data => {
+        //use the getRole() method to input collected data into the intern object and add it to the team array
         team.push(intern.getRole(data));
+        //function to determine which employee to create next based on the 'continue' prompt
         addTeamMember(data);
     })
 }
+
+//if intern is selected from the 'continue' prompt, retrive data for a new engineer object
 function createEngineer(){
     const engineer = new Engineer();
     inquirer
@@ -124,12 +134,14 @@ function createEngineer(){
         }
     ])
     .then(data => {
-
+        //use the getRole() method to input collected data into the intern object and add it to the team array
         team.push(engineer.getRole(data));
+          //function to determine which employee to create next based on the 'continue' prompt
         addTeamMember(data);
     })
 }
 
+//using the response to the 'continue' prompt to call the creation of the corresponding employee, or create the html if the user is finished
 function addTeamMember(data){
     if (data.continue == 'Engineer'){
         createEngineer();
@@ -140,6 +152,7 @@ function addTeamMember(data){
     }
 }
 
+//function to initialize application
 function init(){
     console.log("Welcome to the team generator! \n Please build your team-")
     createManager();

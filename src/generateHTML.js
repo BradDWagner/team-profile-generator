@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-
+//create the html for a manager when a Manager object is passed in
 function managerCard(manager){
     return `
     <div class="card col-3 m-2 d-flex justify-content-around" style="width: 18rem;">
@@ -17,6 +17,7 @@ function managerCard(manager){
                 </div>
     `
 }
+//create the html for an engineer when an Engineer object is passed in
 function engineerCard(engineer){
     return `
     <div class="card col-3 m-2 d-flex justify-content-around" style="width: 18rem;">
@@ -33,6 +34,7 @@ function engineerCard(engineer){
                 </div>
     `
 }
+//creat the html for an intern when an Intern object is passed in
 function internCard(intern){
     return `
     <div class="card col-3 m-2 d-flex justify-content-around" style="width: 18rem;">
@@ -49,6 +51,7 @@ function internCard(intern){
                 </div>
     `
 }
+//funciton to cycle through the team member objects passed in and create the corresponding html for each depending on the constructor they were created with
 function addMembers(team){
     var teamCards = ''; 
     for(i = 0; i < team.length; i++){
@@ -69,6 +72,7 @@ function addMembers(team){
     }
     return teamCards
 }
+//create the basis html for the page and call the addMembers function to insert the user submited information
 function generateHtml(team){
 
     const text = `
@@ -103,6 +107,7 @@ function generateHtml(team){
     
     </html>
     `
+    //write the html to file
     fs.writeFile('./dist/index.html', text, (err) =>
     err ? console.error(err) : console.log('Your team profile has been generated in the "dist" directory') )
 }
